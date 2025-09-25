@@ -1,0 +1,28 @@
+{
+    "checksum": "a8f1197a67173ef602d9877b53f23071",
+    "wallpaper": "/home/chav/pictures/wallpapers/gustav.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0d17",
+        "foreground": "#c1c2c5",
+        "cursor": "#8c6b64"
+    },
+    "colors": {
+        "color0": "#0a0d17",
+        "color1": "#2C516B",
+        "color2": "#305972",
+        "color3": "#4D5F6E",
+        "color4": "#31282C",
+        "color5": "#4C7488",
+        "color6": "#647A8C",
+        "color7": "#c1c2c5",
+        "color8": "#595d6d",
+        "color9": "#2C516B",
+        "color10": "#305972",
+        "color11": "#4D5F6E",
+        "color12": "#8c6b64",
+        "color13": "#4C7488",
+        "color14": "#647A8C",
+        "color15": "#c1c2c5"
+    }
+}

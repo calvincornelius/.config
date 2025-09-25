@@ -1,0 +1,140 @@
+@import '../../.cache/wal/colors-waybar.css';
+@define-color one @color1;
+@define-color 2 @color2;
+@define-color 3 @color3;
+@define-color 4 @color4;
+@define-color five @color5;
+@define-color six @color6;
+@define-color 7 @color7;
+@define-color 8 @color8;
+@define-color 9 @color9;
+@define-color 10 @color10;
+@define-color 11 @color11;
+@define-color 12 @color12;
+@define-color 13 @color13;
+@define-color 14 @color14;
+@define-color 15 @color15;
+@define-color bg @background;
+@define-color fg @foreground;
+
+* {
+    font-family: "Symbols Nerd Font", "Noto Sans Mono", FontAwesome, sans-serif;
+}
+
+window#waybar {
+	all: unset;
+	background-color: @one;
+}
+
+.modules-left{
+  padding: 0px 10px 0px 0px;
+}
+.modules-center{
+    color: @bg;
+		font-size: 14pt;
+		padding: 0px 25px;
+	background-color: @4;
+}
+.modules-right{
+		background-color: @4;
+		color: @bg;
+}
+
+#custom-logo{
+		min-width: 25px;
+		font-size: 16pt;
+		padding: 0px 8px 0px 8px;
+    color: #2E93BD;
+}
+
+#custom-notification{
+		min-width: 16px;
+		font-size: 14pt;
+	padding: 0px 0px 0px 18px;
+    color: @bg;
+}
+
+#workspaces {
+		font-size: 12pt;
+		background-color: @4;
+}
+
+#workspaces button {
+    min-width: 32px;
+	padding: 0px 16px;
+    color: @bg;
+}
+
+#workspaces button.active {
+	background-image: linear-gradient(0deg, @five, @2);
+	color: @bg;
+	border: 3px solid @six;
+	border-style: none none solid none;
+	border-radius: 0;
+}
+
+
+#workspaces button:hover{
+	min-width: 32px;
+	padding: 0px 17px; /*because for some reason the 1px unremovable border actually offsets the selection*/
+    background: @13;
+	border: inherit;
+	border-radius: 0;
+    color: @bg;
+	box-shadow: none;
+	text-shadow: none;
+	transition: none;
+  }
+#workspaces button.urgent {
+    background-color: @13;
+    color: #1d2021;
+	border-radius: 0;
+}
+
+#workspaces button.special{
+		font-family: "Noto Sans Mono", monospace;
+    background-image: linear-gradient(270deg, #195596, #29BFE4);
+		border-color: #ffffff;
+		color: #ffffff;
+}
+
+#clock {
+}
+
+#cpu,
+#memory,
+#network,
+#temperature,
+#battery,
+#pulseaudio {
+		font-size: 11pt;
+		padding: 3px 8px;
+}
+
+#memory,
+#cpu
+{
+		min-width: 45px;
+}
+
+
+#cpu.critical, /* lord forbid! */
+#memory.critical {
+    background-color: #c9af82;
+    color: #c14a4a;
+}
+
+#battery.plugged,
+#battery.charging{
+	color: #047721;
+}
+
+#battery.warning{
+	color: yellow;
+}
+
+#temperature.critical,
+#battery.critical
+{
+    color: red;
+}

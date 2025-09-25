@@ -1,0 +1,142 @@
+{
+	"layer": "bottom",
+	"height": 15,
+	"modules-left": [
+		"custom/logo",
+		"hyprland/workspaces",
+		"custom/notification"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"custom/music",
+		"network",
+		"battery",
+		"temperature",
+		"pulseaudio"
+	],
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+			"none": "",
+			"dnd-notification": "<span foreground='red'><small><small><sup>⬤</sup></small></small></span>",
+			"dnd-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "sleep 0.1 && swaync-client -t -sw",
+		"on-click-right": "sleep 0.1 && swaync-client -d -sw",
+		"escape": true
+	},
+	"custom/logo": {
+		"format": "󰣇",
+		"tooltip": false,
+		"on-click": "", // Optional: click to open app launcher
+		"on-click-right": "wlogout" // Optional: right-click for logout menu
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"persistent-workspaces": {
+			"1": "1",
+			"2": "2",
+			"3": "3"
+		},
+		"format-icons": {
+			"special": "",
+			"7": ""
+		},
+		"format-window-separator": "|",
+		"disable-scroll": true,
+		"all-outputs": true,
+		"show-special": true,
+		"tooltip": false,
+		"workspace-taskbar": {
+			"enable": "false"
+		}
+	},
+
+	"custom/music": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "waybar-module-music -a 14 -m -d 5000 -t 10"
+	},
+	
+
+    "clock": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"cpu": {
+		"format": " {usage}%",
+		"interval": 2,
+		"states": {
+			"critical": 90
+		}
+	},
+	"memory": {
+		"format": " {percentage}%",
+		"interval": 2,
+		"states": {
+			"critical": 80
+		}
+	},
+	"battery": {
+		"format": "{icon} {capacity}%",
+		"interval": 5,
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"format-charging": "{capacity}% ",
+		"format-plugged": "{capacity}% ",
+		"states": {
+			"warning": 20,
+			"critical": 10
+		},
+		"tooltip": false
+	},
+	"temperature": {
+		"thermal-zone": 2,
+		"hwmon-path": [
+			"/sys/class/hwmon/hwmon2/temp1_input",
+			"/sys/class/thermal/thermal_zone0/temp"
+		],
+		"critical-threshold": 80,
+		// "format-critical": "{temperatureC}°C ",
+		"format": " {temperatureC}°C"
+	},
+	"network": {
+		"format-wifi": "{icon} {essid}",
+		"format-icons": [
+			"▁",
+			"▁▂",
+			"▁▂▃",
+			"▁▂▃▄"
+		],
+		"format-ethernet": "enth up",
+		"format-disconnected": "no network",
+		"tooltip": false
+	},
+	"pulseaudio": {
+		"scroll-step": 5,
+		"max-volume": 150,
+		"format": "{icon} {volume}%",
+		"format-icons": [
+			"",
+			"󰕾",
+			""
+		],
+		"format-muted": "",
+		"format-bluetooth": "vol {volume}%",
+		"nospacing": 1,
+		"on-click": "pavucontrol",
+		"tooltip": false
+	}
+}
