@@ -13,25 +13,21 @@ local options = {
 	cursorline = false, --highlight line
 	ttyfast = true, --faster scrolling
 	smoothscroll = true,
-	title = true, --automatic window titlebar
+	title = true,
 	winborder = "rounded",
 	tabstop = 4,
 	shiftwidth = 2,
 	signcolumn = "yes",
-	
 	number = true, --numbering lines
 	relativenumber = true, --toggle bound to leader nn
 	numberwidth = 4,
 	hlsearch = false,
-
 	smarttab = true, --indentation stuff
 	cindent = true,
 	autoindent = false,
-
 	foldmethod = "expr",
-	foldlevel = 99, --disable folding, lower #s enable
+	foldlevel = 20, --disable folding, lower #s enable
 	foldexpr = "nvim_treesitter#foldexpr()",
-	
 	termguicolors = true,
 
 	ignorecase = true, --ignore case while searching

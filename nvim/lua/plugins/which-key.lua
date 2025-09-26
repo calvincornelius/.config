@@ -1,10 +1,10 @@
 local wk = require("which-key")
 wk.add({
 { "<leader>d", desc = "duplicate file" },
-{ "<leader>p", desc = "toggle theme" },
+{ "<leader>t", desc = "toggle theme" },
 { "<leader>u", desc = "open url" },
 { "<leader>z", desc = "floating terminal" },
-{ "<leader>f", desc = "fzf" },
+{ "<leader>f", desc = "format" },
 { "<leader>g", desc = "grep" },
 { "<leader>G", desc = "grep under cursor" },
 { "<leader>x", desc = "chmod +x" },

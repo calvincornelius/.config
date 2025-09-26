@@ -33,6 +33,7 @@ map('n', '<leader>z', ":lua require('FTerm').open()<CR>") --open term
 map("n", "<leader>e", ":NvimTreeToggle<CR>")              --open file explorer
 map("n", "<leader>s", ":%s//g<Left><Left>")               --replace all
 map("n", "<leader>Q", ":qa<CR>")
+
 --lsp
 map('n', 'gD', vim.lsp.buf.declaration)
 map('n', 'gd', vim.lsp.buf.definition)
@@ -43,7 +44,7 @@ map('n', '<space>D', vim.lsp.buf.type_definition)
 map('n', '<space>rn', vim.lsp.buf.rename)
 map('n', '<space>ca', vim.lsp.buf.code_action)
 map('n', 'gr', vim.lsp.buf.references)
-map('n', '<space>f', function() vim.lsp.buf.format { async = true } end)
+map('n', '<space>lf', function() vim.lsp.buf.format { async = true } end)
 map('i', '<c-e>', function() vim.lsp.completion.get() end)
 
 --clipboard
