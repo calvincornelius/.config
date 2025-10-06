@@ -5,7 +5,7 @@ require('lint').linters_by_ft = { --some of these need to be installed from pack
   c = {'cppcheck'},
   rust = {'clippy'},
   css = {'stylelint'},
-  html = {'html'},
+  html = {'htmlhint'},
   python = {'ruff'},
 }
 

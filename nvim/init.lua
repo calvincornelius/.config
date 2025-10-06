@@ -14,7 +14,7 @@ local vim = vim
 local Plug = vim.fn['plug#']
 
 vim.g.start_time = vim.fn.reltime()
-vim.loader.enable() 
+vim.loader.enable()
 vim.call('plug#begin')
 
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })       --colorscheme
