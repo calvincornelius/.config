@@ -113,6 +113,7 @@
 		"format": " {temperatureC}°C"
 	},
 	"network": {
+		"interface": "wlan0",
 		"format-wifi": "{icon} {essid}",
 		"format-icons": [
 			"▁",

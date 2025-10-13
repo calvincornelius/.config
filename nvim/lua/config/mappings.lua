@@ -58,15 +58,10 @@ map("n", "<leader>P", ":PlugInstall<CR>")                             --vim-plug
 map('t', '<Esc>', '<C-\\><C-n><CMD>lua require("FTerm").close()<CR>') --preserves session
 map("n", "<leader>ch", "<cmd>!chmod +x %<CR>")                        --make a file executable
 map("n", "<leader>mv", ":!mv % ")                                     --move a file to a new dir
-map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>')            --open a url under cursor
+--map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>')            --open a url under cursor
 map("v", "<leader>i", "=gv")                                          --auto indent
 map("n", "<leader>T", ":Twilight<CR>")                                --surrounding dim
-
--- decisive csv
-map("n", "<leader>csa", ":lua require('decisive').align_csv({})<cr>")
-map("n", "<leader>csA", ":lua require('decisive').align_csv_clear({})<cr>")
-map("n", "[c", ":lua require('decisive').align_csv_prev_col()<cr>")
-map("n", "]c", ":lua require('decisive').align_csv_next_col()<cr>")
+map("n", "<leader>f", ":FZF<CR>")									  --rough fzf... replace with telescope
 
 
 map("n", "<leader>ma", function() --quick make in dir of buffer
