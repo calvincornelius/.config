@@ -23,10 +23,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 --})
 
 --treesitter folds start opened
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*",
-	command = "normal zR"
-})
+ --vim.api.nvim_create_autocmd("FileType", {
+	 --pattern = "*",
+	 --command = "normal zR"
+ --})
 
 -- linting when file is written to
 vim.api.nvim_create_autocmd("BufWritePost", {

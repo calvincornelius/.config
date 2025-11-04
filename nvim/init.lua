@@ -1,5 +1,3 @@
--- forked from bread's neovim config
-
 -- auto install vim-plug and plugins, if not found
 local data_dir = vim.fn.stdpath('data')
 if vim.fn.empty(vim.fn.glob(data_dir .. '/site/autoload/plug.vim')) == 1 then
@@ -10,7 +8,6 @@ if vim.fn.empty(vim.fn.glob(data_dir .. '/site/autoload/plug.vim')) == 1 then
 	vim.cmd('autocmd VimEnter * PlugInstall --sync | source $MYVIMRC')
 end
 
-local vim = vim
 local Plug = vim.fn['plug#']
 
 vim.g.start_time = vim.fn.reltime()

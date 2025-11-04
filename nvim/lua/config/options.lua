@@ -25,7 +25,7 @@ local options = {
 	cindent = true,
 	autoindent = false,
 	foldmethod = "expr",
-	--foldlevel = 20, --disable folding, lower #s enable
+	foldlevel = 99, --disable folding, lower #s enable
 	foldexpr = "nvim_treesitter#foldexpr()",
 	termguicolors = true,
 
