@@ -1,3 +1,6 @@
+-- todo: rework for 0.12
+-- lsp rework AGAIN
+-- redo plugins with native pkgmgr
 -- auto install vim-plug and plugins, if not found
 local data_dir = vim.fn.stdpath('data')
 if vim.fn.empty(vim.fn.glob(data_dir .. '/site/autoload/plug.vim')) == 1 then
@@ -14,13 +17,12 @@ vim.g.start_time = vim.fn.reltime()
 vim.loader.enable()
 vim.call('plug#begin')
 
-Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })       --colorscheme
-Plug('ellisonleao/gruvbox.nvim', { ['as'] = 'gruvbox' }) --colorscheme 2
-Plug('uZer/pywal16.nvim', { ['as'] = 'pywal16' })        --or, pywal colorscheme
+Plug('ellisonleao/gruvbox.nvim', { ['as'] = 'gruvbox' }) --colorscheme 
+Plug('uZer/pywal16.nvim', { ['as'] = 'pywal16' })        --pywal colorscheme
 Plug('nvim-lualine/lualine.nvim')                        --statusline
-Plug('nvim-tree/nvim-web-devicons')                      --pretty icons
+Plug('nvim-tree/nvim-web-devicons')                      --icons
 Plug('folke/which-key.nvim')                             --mappings popup
-Plug('romgrk/barbar.nvim')                               --bufferline
+Plug('romgrk/barbar.nvim')                               --tabs
 Plug('goolord/alpha-nvim')                               --pretty startup
 Plug('nvim-treesitter/nvim-treesitter')                  --improved syntax
 Plug('mfussenegger/nvim-lint')                           --async linter
@@ -31,16 +33,13 @@ Plug('numToStr/Comment.nvim')                            --easier comments
 Plug('norcalli/nvim-colorizer.lua')                      --color highlight
 Plug('ibhagwan/fzf-lua')                                 --fuzzy finder and grep
 Plug('numToStr/FTerm.nvim')                              --floating terminal
-Plug('ron-rs/ron.vim')                                   --ron syntax highlighting
 Plug('MeanderingProgrammer/render-markdown.nvim')        --render md inline
-Plug('emmanueltouzery/decisive.nvim')                    --view csv files
-Plug('folke/twilight.nvim')                              --surrounding dim
 Plug('neovim/nvim-lspconfig')                            --lsp support
 Plug('stevearc/oil.nvim')                                --backup for filetree
-Plug('folke/lazydev.nvim')                               --
-Plug('mfussenegger/nvim-dap')
+Plug('folke/lazydev.nvim')
+Plug('mfussenegger/nvim-dap')							 --
 Plug('nvim-neotest/nvim-nio')                            --three horsemen of debugging
-Plug('rcarriga/nvim-dap-ui')
+Plug('rcarriga/nvim-dap-ui')							 --
 Plug('lvimuser/lsp-inlayhints.nvim')
 Plug('nvim-mini/mini.surround')
 Plug('AlphaTechnolog/pywal.nvim')
@@ -65,6 +64,7 @@ require("plugins.lualine")
 require("plugins.nvim-lint")
 require("plugins.render-markdown")
 require("lsp.lazydev")
+require("lsp.pyright")
 require("plugins.lspconfig")
 require("plugins.surround")
 require('livepreview.config').set()

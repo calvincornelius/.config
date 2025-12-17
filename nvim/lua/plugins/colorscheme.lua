@@ -1,13 +1,13 @@
 -- catppuccin + gruvbox colorscheme configuration
 
-require("catppuccin").setup({
-	flavour = "frappe",
-	transparent_background = true,
-        styles = {
-           sidebars = "transparent",
-           floats = "transparent",
-        },
-})
+ --require("catppuccin").setup({
+	 --flavour = "frappe",
+	 --transparent_background = true,
+         --styles = {
+            --sidebars = "transparent",
+            --floats = "transparent",
+         --},
+ --})
 
 require("gruvbox").setup({
   terminal_colors = true, -- add neovim terminal colors

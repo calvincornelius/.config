@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
 local lsphint = require('lsp-inlayhints')
-local servers = { 'lua_ls', 'ts_ls', 'jsonls', 'hyprls', 'pyright', 'html' }
+
 vim.diagnostic.config({
 	virtual_text = false
 })
@@ -12,18 +12,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		if not (args.data and args.data.client_id) then
 			return
 		end
-
 		local bufnr = args.buf
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		lsphint.on_attach(client, bufnr)
 	end,
 })
+
+local servers = { 'lua_ls', 'ts_ls', 'jsonls', 'hyprls', 'pyright', 'html' }
+
 for _, lsp in pairs(servers) do
-	lspconfig[lsp].setup {
-		on_attach = bufnr,
-		capabilites = {},
-	}
+	-- Try to load server-specific config from lsp/servername.lua
+	local ok, server_config = pcall(require, 'lsp.' .. lsp)
+
+	local config = ok and server_config or {}
+	config.on_attach = bufnr
+	config.capabilities = {}
+
+	lspconfig[lsp].setup(config)
 end
--- Show line diagnostics automatically in hover window
+
 vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]

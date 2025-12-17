@@ -8,8 +8,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
+map("n", "<S-l>", ":BufferNext<CR>")
+map("n", "<S-h>", ":BufferPrevious<CR>")
 map("n", "<leader>q", ":BufferClose<CR>")
 map("n", "<leader>Q", ":BufferClose!<CR>")
 map("n", "<leader>U", "::bufdo bd<CR>")         --close all
@@ -58,10 +58,10 @@ map("n", "<leader>P", ":PlugInstall<CR>")                             --vim-plug
 map('t', '<Esc>', '<C-\\><C-n><CMD>lua require("FTerm").close()<CR>') --preserves session
 map("n", "<leader>ch", "<cmd>!chmod +x %<CR>")                        --make a file executable
 map("n", "<leader>mv", ":!mv % ")                                     --move a file to a new dir
---map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>')            --open a url under cursor
+map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>')            --open a url under cursor
 map("v", "<leader>i", "=gv")                                          --auto indent
-map("n", "<leader>T", ":Twilight<CR>")                                --surrounding dim
-map("n", "<leader>f", ":FZF<CR>")									  --rough fzf... replace with telescope
+map("n", "<leader>f", ":FZF<CR>")                                     --rough fzf... replace with telescope
+map("n", "<leader>F", ":FzfLua<CR>")								  --fzf over commands and such
 
 
 map("n", "<leader>ma", function() --quick make in dir of buffer
